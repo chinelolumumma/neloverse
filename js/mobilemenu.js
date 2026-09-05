@@ -22,7 +22,7 @@
         });
 
 
-        //Toggle nested submenus
+
         $(".dpdwn-list").hide();
         jQuery('.click').click(function() {
         jQuery(this).siblings("ul").slideToggle();

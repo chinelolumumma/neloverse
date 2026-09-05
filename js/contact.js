@@ -1,6 +1,6 @@
 (function () {
-    // TODO: swap in your real Formspree endpoint once the form is created
-    var FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+    
+    var FORMSPREE_ENDPOINT = "https://formspree.io/f/xkjnzopz";
 
     var form = document.getElementById("chatForm");
     var transcript = document.getElementById("chatTranscript");
@@ -44,7 +44,7 @@
         });
     });
 
-    // Final submit — send to Formspree, show confirmation on success
+    
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 

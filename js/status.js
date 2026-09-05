@@ -6,35 +6,36 @@
     function updateStatusWidget() {
         var icon = document.getElementById("statusIcon");
         var state = document.getElementById("statusState");
-        var subtext = document.getElementById("statusSubtext");
-        if (!icon || !state || !subtext) return;
-        
+        if (!icon || !state) return;
+
         var now = new Date();
         var parts = new Intl.DateTimeFormat("en-US", {
-            timeZone: TIMEZONE,
-            weekday: "short",
-            hour: "numeric",
-            hour12: false
+        timeZone: TIMEZONE,
+        weekday: "short",
+        hour: "numeric",
+        hour12: false
         }).formatToParts(now);
-        
+
         var weekday = parts.find(function (p) { return p.type === "weekday"; }).value;
         var hour = parseInt(parts.find(function (p) { return p.type === "hour"; }).value, 10);
 
-        var isWeekday = ["Sat", "Sun"].indexOf(weekday) === -1;
-        var isAwake = isWeekday && hour >= AWAKE_START_HOUR && hour < AWAKE_END_HOUR;
+        var isWeekend = ["Sat", "Sun"].indexOf(weekday) !== -1;
+        var isAwakeHours = hour >= AWAKE_START_HOUR && hour < AWAKE_END_HOUR;
 
-        if (isAwake) {
-            icon.classList.remove("fa-moon");
-            icon.classList.add("fa-message", "is-awake");
-            state.textContent = "Awake";
-            subtext.textContent = "Send me a message";
+        icon.classList.remove("fa-moon", "fa-sun", "fa-leaf", "is-awake");
+
+        if (isWeekend) {
+            icon.classList.add("fa-leaf", "is-awake");
+            state.textContent = "I'm touching grass";
+        } else if (isAwakeHours) {
+            icon.classList.add("fa-sun", "is-awake");
+            state.textContent = "I'm up";
         } else {
-            icon.classList.remove("fa-message", "is-awake");
             icon.classList.add("fa-moon");
-            state.textContent = "Asleep";
-            subtext.textContent = "Back online at 8:00am CT";
+            state.textContent = "I'm asleep";
         }
     }
+
     updateStatusWidget();
     setInterval(updateStatusWidget, 60000);
 })();

@@ -1,3 +1,7 @@
+---
+title: Home
+---
+
 <!DOCTYPE HTML>
 <html lang="en">
     
@@ -20,11 +24,11 @@
 
         <meta name="apple-mobile-web-app-title" content="Neloverse">
 
-        <link rel="icon" type="image/png" href="/siteart/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/siteart/favicon.svg" />
-        <link rel="shortcut icon" href="/siteart/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/siteart/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="Neloverse" />
+        <link rel="icon" type="image/png" href="/siteart/favicon-96x96.png" sizes="96x96"/>
+        <link rel="icon" type="image/svg+xml" href="/siteart/favicon.svg"/>
+        <link rel="shortcut icon" href="/siteart/favicon.ico"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="/siteart/apple-touch-icon.png"/>
+        
         <link rel="manifest" href="/siteart/site.webmanifest" />
 
 
@@ -44,17 +48,21 @@
 
         <!-- Google Analytics -->
 
-        GOOGLE ANALYTICS GOES HERE
+        
 
         <!-- End Google Analytics -->
 
     </head>
 
     <body>
-        <div class="gate grain" id="gate">
-            <div class="gate__content">
-                <h1 class="gate__mark">Neloverse</h1>
-                <button class="gate__enter" id="gateEnter">Enter</button>
+        
+        <div class="gate" id="gate">
+            <div class="gate__card grain">
+                <h1 class="gate__title">Log In</h1>
+                <p class="gate__label" id="gateQuestion">What's your favorite drink?</p>
+                <input type="text" id="gatePassword" class="gate__password" placeholder="Type your answer&hellip;" autocomplete="off">
+                <button class="gate__enter" id="gateEnter">Log In</button>
+                <p class="gate__error is-hidden" id="gateError">Type something to continue.</p>
             </div>
         </div>
     
@@ -64,7 +72,7 @@
             <section class="hero">
                 <div class="container hero__grid">
                     <div>
-                        <p class="hero__eyebrow">Chinelo Spencer-Obiano</p>
+                        <!-- <p class="hero__eyebrow">Chinelo Spencer-Obiano</p> -->
                         <h2 class="hero__headline">
                             Interface by trade, brands by obsession
                         </h2>
@@ -83,10 +91,11 @@
                         </div>
 
                         <div class="status-widget" id="statusWidget">
-                            <i aria-hidden="true" class="fa-solid fa-moon status-widget__icon" id="statusIcon"></i>
+                            <div class="status-widget__icon-box">
+                                <i aria-hidden="true" class="fa-solid fa-moon status-widget__icon" id="statusIcon"></i>
+                            </div>
                             <div class="status-widget__text">
-                                <h3 class="sm-heading">I'm <span id="statusState">Asleep</span></h3>
-                                <h4 id="statusSubtext">Back online at 8:00am CT</h4>
+                                <h3 class="sm-heading" id="statusState">Asleep</h3>
                             </div>
                             <ul>
                                 <li>Mon&ndash;Fri: 8:00am&ndash;4:00pm CT</li>
@@ -132,33 +141,15 @@
                     </div>
                 </div>
             </section>
-            
-            <section class="about-teaser">
-                <div class="container about-teaser__grid">
-                    <p class="about-teaser__body">
-                        I'm funny, faith-driven, and a little too obsessed with packaging design — I've spent five hours in a grocery store just staring at cereal boxes, which is why Instacart exists. I believe creativity's a gift, and what's the use of a gift you don't share?
-                    </p>
-                    <a href="/about.html" class="about-teaser__link">More about me</a>
-                </div>
-            </section>
-
-            <section class="contact-cta">
-                <div class="container contact-cta__inner">
-                    <h2 class="contact-cta__headline">Got a brand that needs a pulse?</h2>
-                    <a href="/contact.html" class="btn contact-cta__btn">Say hello</a>
-                </div>
-            </section>
         </main>
 
         {% include footer.html %}
 
-        <script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
-        <script type="text/javascript" src="../js/mobilemenu.js"></script>
+        <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+        <script type="text/javascript" src="/js/mobilemenu.js"></script>
         <script type="text/javascript" src="/js/entrance.js"></script>
         <script type="text/javascript" src="/js/status.js"></script>
 
     </body>
-
-
 
 </html>

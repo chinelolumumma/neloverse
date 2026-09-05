@@ -1,3 +1,19 @@
+@font-face {
+    font-family: "Struggle";
+    src: url("/fonts/struggle-regular.woff2") format("woff2"), url("/fonts/struggle-regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Departure Mono";
+    src: url("/fonts/DepartureMono-Regular.woff2") format("woff2"), url("/fonts/DepartureMono-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 /***** BEGIN RESET *****/
 
 html, body, div, span, applet, object, iframe,
@@ -29,13 +45,13 @@ header, nav, article, footer, address {
 /***** END RESET *****/
 
 ::-moz-selection {
-    background: #F5019A;
-    color: #FAFAFA;
+    background: #A20F12;
+    color: #F3EDE6;
     text-shadow: none;
 }
 ::selection {
-    background: #F5019A;
-    color: #FAFAFA;
+    background: #A20F12;
+    color: #F3EDE6;
     text-shadow: none;
 }
 
@@ -69,12 +85,12 @@ Neloverse — Tokens
 
 :root {
     --black: #0B0B0B;
-    --off-white: #FAFAFA;
-    --magenta: #F5019A;
-    --pink: #F87ECA;
+    --off-white: #F3EDE6;
+    --red: #A20F12;
 
-    --font-display: "waverly-cf", "Georgia", serif;
+    --font-display: "Struggle", "Georgia", serif;
     --font-body: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "Departure Mono", "SF Mono", "Courier New", monospace;
 
     --max-width: 1320px;
     --gutter: clamp(24px, 5vw, 80px);
@@ -93,15 +109,15 @@ html {
         scroll-behavior: auto;
     }
     *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-}
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 body {
     margin: 0;
-    background: var(--black);
+    background: var(--red);
     color: var(--off-white);
     font-family: var(--font-body);
     font-size: 16px;
@@ -131,7 +147,7 @@ button {
 }
 
 :focus-visible {
-    outline: 2px solid var(--magenta);
+    outline: 2px solid var(--red);
     outline-offset: 3px;
 }
 
@@ -165,7 +181,7 @@ button {
 }
 
 .btn-solid {
-    background: var(--magenta);
+    background: var(--red);
     color: var(--off-white);
 }
 
@@ -177,12 +193,12 @@ button {
 .btn-outline {
     background: transparent;
     color: var(--off-white);
-    border-color: rgba(250, 250, 250, 0.35);
+    border-color: rgba(243, 237, 230, 0.35);
 }
 
 .btn-outline:hover {
-    border-color: var(--magenta);
-    color: var(--magenta);
+    border-color: var(--red);
+    color: var(--red);
 }
 /* ============================================
 Entrance gate
@@ -195,20 +211,8 @@ Entrance gate
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--black);
+    background: var(--red);
     transition: opacity 0.7s ease, visibility 0.7s ease;
-}
-
-.gate::before {
-  /* wavy line motif, single restrained decorative element */
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800' preserveAspectRatio='none'%3E%3Cpath d='M-50 620 C 150 520, 300 720, 500 600 S 850 460, 1050 600 S 1300 720, 1450 600' fill='none' stroke='%23F5019A' stroke-width='2' opacity='0.35'/%3E%3Cpath d='M-50 200 C 150 100, 300 300, 500 180 S 850 40, 1050 180 S 1300 300, 1450 180' fill='none' stroke='%23F87ECA' stroke-width='2' opacity='0.25'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    pointer-events: none;
 }
 
 .gate.is-hidden {
@@ -216,26 +220,65 @@ Entrance gate
     visibility: hidden;
 }
 
-.gate__content {
+.gate__card {
     position: relative;
-    text-align: center;
-    padding: 0 24px;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 24px;
+    padding: 32px;
+    border-radius: 24px;
+    overflow: hidden;
+    background: rgba(11, 11, 11, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(243, 237, 230, 0.25);
 }
 
-.gate__mark {
+.gate__title {
     font-family: var(--font-display);
-    font-size: clamp(3rem, 12vw, 8rem);
-    letter-spacing: 0.02em;
-    line-height: 0.9;
-    margin: 0 0 48px;
+    font-size: 2rem;
     color: var(--off-white);
+    margin: 0 0 8px;
+}
+
+.gate__label {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: rgba(243, 237, 230, 0.75);
+    margin: 0 0 24px;
+}
+
+.gate__password {
+    display: block;
+    width: 100%;
+    margin: 0 0 20px;
+    background: rgba(243, 237, 230, 0.08);
+    border: 1px solid rgba(243, 237, 230, 0.3);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--off-white);
+    text-align: left;
+}
+
+.gate__password::placeholder {
+    (243, 237, 230, 0.4);
+}
+
+.gate__password:focus {
+    outline: none;
+    border-color: var(--off-white);
 }
 
 .gate__enter {
-    background: var(--off-white);
-    color: var(--black);
-    border-radius: 999px;
-    padding: 16px 48px;
+    font-family: var(--font-mono);
+    display: block;
+    width: 100%;
+    background: var(--black);
+    color: var(--off-white);
+    border-radius: 12px;
+    padding: 16px;
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -244,17 +287,31 @@ Entrance gate
 }
 
 .gate__enter:hover {
-    background: var(--magenta);
-    color: var(--off-white);
+    background: var(--off-white);
+    color: var(--black);
 }
 
 .gate__enter:active {
-    transform: scale(0.97);
+    transform: scale(0.98);
+}
+
+.gate__error {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--off-white);
+    margin: 16px 0 0;
+    text-align: center;
+}
+
+.gate__error.is-hidden {
+    display: none;
 }
 
 body.gate-locked {
     overflow: hidden;
 }
+
+
 /* ============================================
 Hero
    ============================================ */
@@ -281,13 +338,14 @@ Hero
 
 .hero__eyebrow {
     font-family: var(--font-display);
-    color: var(--magenta);
+    color: var(--red);
     font-size: 1.1rem;
     margin: 0 0 24px;
 }
 
 .hero__headline {
     font-family: var(--font-display);
+    font-weight: 700;
     font-size: clamp(2.75rem, 6vw, 5rem);
     line-height: 0.95;
     margin: 0 0 28px;
@@ -296,7 +354,7 @@ Hero
 
 .hero__body {
     font-size: 1.1rem;
-    color: rgba(250, 250, 250, 0.75);
+    color: rgba(243, 237, 230, 0.75);
     max-width: 48ch;
     margin: 0 0 40px;
 }
@@ -309,24 +367,24 @@ Hero
 
 /* Photo card */
 .photo-card {
-    border: 1px solid rgba(250, 250, 250, 0.12);
+    border: 1px solid rgba(243, 237, 230, 0.12);
     border-radius: 24px;
     padding: 20px;
-    background: rgba(250, 250, 250, 0.02);
+    background: rgba(243, 237, 230, 0.02);
 }
 
 .photo-card__frame {
     border-radius: 16px;
     overflow: hidden;
     aspect-ratio: 4 / 5;
-    background: rgba(250, 250, 250, 0.06);
+    background: rgba(243, 237, 230, 0.06);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(250, 250, 250, 0.4);
+    color: rgba(243, 237, 230, 0.4);
     font-size: 0.9rem;
     text-align: center;
-    border: 1px dashed rgba(250, 250, 250, 0.2);
+    border: 1px dashed rgba(243, 237, 230, 0.2);
 }
 
 .photo-card__frame img {
@@ -350,31 +408,31 @@ Hero
     color: var(--off-white);
 }
 
-.status-widget__icon {
-    font-size: 28px;
-    color: var(--pink);
+.status-widget__icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(243, 237, 230, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
 }
 
+.status-widget__icon {
+    font-size: 20px;
+    color: var(--red);
+}
+
 .status-widget__icon.is-awake {
-    color: var(--magenta);
+    color: var(--off-white);
 }
 
 .status-widget__text h3 {
     margin: 0;
     font-size: 1rem;
     font-weight: 700;
-}
-
-.status-widget__text h3 span {
-    color: var(--magenta);
-}
-
-.status-widget__text h4 {
-    margin: 2px 0 0;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: rgba(250, 250, 250, 0.7);
+    color: var(--off-white);
 }
 
 .status-widget ul {
@@ -382,7 +440,7 @@ Hero
     margin: 0;
     padding: 0;
     font-size: 0.78rem;
-    color: rgba(250, 250, 250, 0.5);
+    color: var(--off-white);
     line-height: 1.6;
 }
 
@@ -400,26 +458,39 @@ Header layout + wordmark
     justify-content: space-between;
     align-items: center;
     padding: 28px var(--gutter);
+    background: rgba(11, 11, 11, 0.7);
+    /*
+       IMPORTANT: no backdrop-filter, transform, or filter on this
+       element. The mobile nav panel (<nav class="mobile">) is nested
+       INSIDE this header and is position:fixed. Any of those
+       properties on an ancestor creates a new "containing block" for
+       fixed-position descendants, trapping the panel inside this
+       header's shallow height instead of the full viewport — this
+       has broken the mobile menu twice already for exactly this
+       reason. If a glass/blur header look is wanted again later, the
+       mobile nav must first be moved to be a sibling of <header>
+       rather than a child.
+    */
 }
 
 .site-header__mark {
     font-family: var(--font-display);
+    font-weight: 300;
     font-size: 1.4rem;
     letter-spacing: 0.02em;
     color: var(--off-white); /* default: dark-background pages. Override per page below. */
 }
 
 /*
-Per-page logo color override:
-Add a class to <body> in a specific page (e.g. body class="mode-light")
-and set the color here. Example for a white-background page:
+   Per-page logo color override:
+   Add a class to <body> for a specific page and set the
+   color here. Example for a white-background page:
 
-body.mode-light .site-header__mark { color: var(--black); }
-body.mode-magenta .site-header__mark { color: var(--black); }
+   body.mode-light .site-header__mark { color: var(--black); }
 */
 
 /* ============================================
-Work preview grid (mobile-first)
+   Work preview grid (mobile-first)
    ============================================ */
 
 .work-preview {
@@ -439,7 +510,7 @@ Work preview grid (mobile-first)
 }
 
 .work-preview__all {
-    color: var(--magenta);
+    color: var(--red);
     font-size: 0.95rem;
     font-weight: 600;
     align-self: flex-start;
@@ -449,7 +520,8 @@ Work preview grid (mobile-first)
     color: var(--off-white);
 }
 
-.work-preview__grid {
+.work-preview__grid,
+.work-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 28px;
@@ -463,12 +535,12 @@ Work preview grid (mobile-first)
 .work-card__image {
     aspect-ratio: 4 / 3;
     border-radius: 16px;
-    border: 1px dashed rgba(250, 250, 250, 0.2);
-    background: rgba(250, 250, 250, 0.04);
+    border: 1px dashed rgba(243, 237, 230, 0.2);
+    background: rgba(243, 237, 230, 0.04);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(250, 250, 250, 0.4);
+    color: rgba(243, 237, 230, 0.4);
     font-size: 0.9rem;
     overflow: hidden;
     margin-bottom: 16px;
@@ -482,7 +554,7 @@ Work preview grid (mobile-first)
 }
 
 .work-card:hover .work-card__image {
-    border-color: var(--magenta);
+    border-color: var(--red);
 }
 
 .work-card__title {
@@ -493,7 +565,7 @@ Work preview grid (mobile-first)
 
 .work-card__tag {
     font-size: 0.85rem;
-    color: rgba(250, 250, 250, 0.55);
+    color: rgba(243, 237, 230, 0.55);
 }
 
 @media screen and (min-width: 768px) {
@@ -503,97 +575,14 @@ Work preview grid (mobile-first)
         align-items: flex-end;
     }
 
-    .work-preview__grid {
+    .work-preview__grid,
+    .work-grid {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
 }
 
-
 /* ============================================
-About teaser (mobile-first)
-   ============================================ */
-
-.about-teaser {
-    padding: 60px 0 100px;
-    border-top: 1px solid rgba(250, 250, 250, 0.08);
-}
-
-.about-teaser__grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.about-teaser__body {
-    font-size: 1.15rem;
-    line-height: 1.6;
-    max-width: 62ch;
-    color: rgba(250, 250, 250, 0.85);
-}
-
-.about-teaser__link {
-    color: var(--magenta);
-    font-weight: 600;
-    align-self: flex-start;
-}
-
-.about-teaser__link:hover {
-    color: var(--off-white);
-}
-
-@media screen and (min-width: 768px) {
-    .about-teaser__grid {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-end;
-        gap: 40px;
-    }
-
-    .about-teaser__link {
-        white-space: nowrap;
-    }
-}
-
-
-/* ============================================
-Contact CTA (mobile-first)
-Uses the third brand mode: magenta background,
-black elements on top.
-   ============================================ */
-
-.contact-cta {
-    background: var(--magenta);
-    padding: 90px 0;
-}
-
-.contact-cta__inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 32px;
-}
-
-.contact-cta__headline {
-    font-family: var(--font-display);
-    color: var(--black);
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    max-width: 16ch;
-}
-
-.contact-cta__btn {
-    background: var(--black);
-    color: var(--off-white);
-}
-
-.contact-cta__btn:hover {
-    background: var(--off-white);
-    color: var(--black);
-}
-
-
-/* ============================================
-Page heading (reused across work.html, about.html, contact.html)
+   Page heading (reused across work.html, about.html, contact.html)
    ============================================ */
 
 .page-heading {
@@ -608,23 +597,20 @@ Page heading (reused across work.html, about.html, contact.html)
 
 .page-heading__body {
     font-size: 1.1rem;
-    color: rgba(250, 250, 250, 0.7);
+    color: rgba(243, 237, 230, 0.7);
     max-width: 50ch;
 }
 
 /* ============================================
-Work index grid (mobile-first)
-Shares .work-card styling with the homepage
-preview; only the grid container differs.
+   Work index grid (mobile-first)
    ============================================ */
 
 .work-index {
     padding-bottom: 100px;
 }
 
-
 /* ============================================
-Shared section heading (reused across pages)
+   Shared section heading (reused across pages)
    ============================================ */
 
 .section-heading {
@@ -634,7 +620,7 @@ Shared section heading (reused across pages)
 }
 
 /* ============================================
-About: bio (mobile-first)
+   About: bio (mobile-first)
    ============================================ */
 
 .about-bio {
@@ -644,7 +630,7 @@ About: bio (mobile-first)
 .about-bio__paragraph {
     font-size: 1.15rem;
     line-height: 1.6;
-    color: rgba(250, 250, 250, 0.85);
+    color: rgba(243, 237, 230, 0.85);
     max-width: 65ch;
     margin-bottom: 20px;
 }
@@ -654,12 +640,12 @@ About: bio (mobile-first)
 }
 
 /* ============================================
-About: skills (mobile-first)
+   About: skills (mobile-first)
    ============================================ */
 
 .skills {
     padding: 60px 0;
-    border-top: 1px solid rgba(250, 250, 250, 0.08);
+    border-top: 1px solid rgba(243, 237, 230, 0.08);
 }
 
 .skills__grid {
@@ -671,7 +657,7 @@ About: skills (mobile-first)
 .skills__category {
     font-size: 0.95rem;
     font-weight: 700;
-    color: var(--pink);
+    color: var(--red);
     margin-bottom: 12px;
 }
 
@@ -685,8 +671,8 @@ About: skills (mobile-first)
     font-size: 0.85rem;
     padding: 6px 14px;
     border-radius: 999px;
-    border: 1px solid rgba(250, 250, 250, 0.15);
-    color: rgba(250, 250, 250, 0.8);
+    border: 1px solid rgba(243, 237, 230, 0.15);
+    color: rgba(243, 237, 230, 0.8);
 }
 
 @media screen and (min-width: 768px) {
@@ -702,37 +688,73 @@ About: skills (mobile-first)
 }
 
 /* ============================================
-About: experience timeline (mobile-first)
+   About: experience timeline (mobile-first)
    ============================================ */
 
 .timeline {
     padding: 60px 0 100px;
-    border-top: 1px solid rgba(250, 250, 250, 0.08);
+    border-top: 1px solid rgba(243, 237, 230, 0.08);
 }
 
 .timeline__list {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-.timeline__item {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid rgba(250, 250, 250, 0.08);
+/* Connecting line running behind the logo nodes */
+.timeline__list::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 23px;
+    width: 2px;
+    background: rgba(243, 237, 230, 0.12);
 }
 
-.timeline__item:last-child {
+.timeline__item {
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
+
+.timeline__logo {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(243, 237, 230, 0.08);
+    border: 1px solid rgba(243, 237, 230, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--red);
+}
+
+.timeline__content {
+    flex: 1;
+    min-width: 0;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(243, 237, 230, 0.08);
+}
+
+.timeline__item:last-child .timeline__content {
     border-bottom: none;
     padding-bottom: 0;
 }
 
 .timeline__dates {
+    display: block;
     font-size: 0.85rem;
-    color: var(--magenta);
+    color: var(--red);
     font-weight: 600;
+    margin-bottom: 6px;
 }
 
 .timeline__role {
@@ -742,16 +764,51 @@ About: experience timeline (mobile-first)
 
 .timeline__company {
     font-size: 0.95rem;
-    color: rgba(250, 250, 250, 0.6);
+    color: rgba(243, 237, 230, 0.6);
     margin-bottom: 10px;
 }
 
 .timeline__desc {
     font-size: 1rem;
     line-height: 1.55;
-    color: rgba(250, 250, 250, 0.8);
+    color: rgba(243, 237, 230, 0.8);
     max-width: 60ch;
+    margin-bottom: 12px;
+}
+
+.timeline__more {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--red);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
     margin-bottom: 14px;
+}
+
+.timeline__more:hover {
+    color: var(--red);
+}
+
+.timeline__bullets {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.timeline__bullets.is-hidden {
+    display: none;
+}
+
+.timeline__bullets li {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: rgba(243, 237, 230, 0.75);
+    max-width: 65ch;
 }
 
 .timeline__tags {
@@ -764,28 +821,13 @@ About: experience timeline (mobile-first)
     font-size: 0.78rem;
     padding: 4px 12px;
     border-radius: 999px;
-    background: rgba(245, 1, 154, 0.12);
-    color: var(--pink);
-}
-
-@media screen and (min-width: 768px) {
-    .timeline__item {
-        flex-direction: row;
-        gap: 40px;
-    }
-
-    .timeline__meta {
-        flex: 0 0 160px;
-    }
-
-    .timeline__content {
-        flex: 1;
-    }
+    background: rgba(162, 15, 18, 0.12);
+    color: var(--red);
 }
 
 
 /* ============================================
-Accessibility utility
+   Accessibility utility
    ============================================ */
 
 .sr-only {
@@ -800,9 +842,8 @@ Accessibility utility
     border: 0;
 }
 
-
 /* ============================================
-Contact: chat-bubble form (mobile-first)
+   Contact: chat-bubble form (mobile-first)
    ============================================ */
 
 .chat-contact {
@@ -811,10 +852,11 @@ Contact: chat-bubble form (mobile-first)
 
 .chat-window {
     background: var(--black);
-    border: 1px solid rgba(250, 250, 250, 0.12);
+    border: 1px solid rgba(243, 237, 230, 0.12);
     border-radius: 24px;
     padding: 24px;
     max-width: 640px;
+    overflow: hidden;
 }
 
 .chat-window__topbar {
@@ -826,20 +868,20 @@ Contact: chat-bubble form (mobile-first)
 
 .chat-window__handle {
     font-weight: 700;
-    color: var(--pink);
+    color: var(--red);
     font-size: 0.9rem;
 }
 
 .chat-window__icons {
     display: flex;
     gap: 16px;
-    color: rgba(250, 250, 250, 0.5);
+    color: rgba(243, 237, 230, 0.5);
     font-size: 1rem;
 }
 
 .chat-window__system {
     font-size: 0.85rem;
-    color: rgba(250, 250, 250, 0.4);
+    color: rgba(243, 237, 230, 0.4);
     font-style: italic;
     margin-bottom: 20px;
 }
@@ -863,8 +905,8 @@ Contact: chat-bubble form (mobile-first)
 }
 
 .chat-bubble--agent {
-    background: var(--magenta);
-    color: var(--black);
+    background: var(--red);
+    color: var(--off-white);
     font-weight: 600;
     align-self: flex-start;
     border-bottom-left-radius: 4px;
@@ -872,7 +914,7 @@ Contact: chat-bubble form (mobile-first)
 }
 
 .chat-bubble--sent {
-    background: rgba(250, 250, 250, 0.1);
+    background: rgba(243, 237, 230, 0.1);
     color: var(--off-white);
     border-bottom-right-radius: 4px;
 }
@@ -884,8 +926,8 @@ Contact: chat-bubble form (mobile-first)
 .chat-step input,
 .chat-step textarea {
     width: 100%;
-    background: rgba(250, 250, 250, 0.06);
-    border: 1px solid rgba(250, 250, 250, 0.15);
+    background: rgba(243, 237, 230, 0.06);
+    border: 1px solid rgba(243, 237, 230, 0.15);
     border-radius: 14px;
     padding: 14px 16px;
     color: var(--off-white);
@@ -897,12 +939,12 @@ Contact: chat-bubble form (mobile-first)
 
 .chat-step input::placeholder,
 .chat-step textarea::placeholder {
-    color: rgba(250, 250, 250, 0.35);
+    color: rgba(243, 237, 230, 0.35);
 }
 
 .chat-step input:focus,
 .chat-step textarea:focus {
-    outline: 2px solid var(--magenta);
+    outline: 2px solid var(--red);
     outline-offset: 2px;
 }
 
@@ -920,18 +962,26 @@ Contact: chat-bubble form (mobile-first)
 
 .chat-step__next:hover,
 .chat-step__send:hover {
-    background: var(--magenta);
+    background: var(--red);
     color: var(--off-white);
 }
 
 .chat-window__error {
     font-size: 0.85rem;
-    color: var(--pink);
+    color: var(--red);
     margin-top: 12px;
+}
+
+.chat-window__error.is-hidden {
+    display: none;
 }
 
 .chat-window__confirmation {
     padding-top: 8px;
+}
+
+.chat-window__confirmation.is-hidden {
+    display: none;
 }
 
 form.is-hidden {
@@ -948,9 +998,8 @@ form.is-hidden {
     }
 }
 
-
 /* ============================================
-Case study template (mobile-first)
+   Case study template (mobile-first)
    ============================================ */
 
 .case-hero {
@@ -958,7 +1007,7 @@ Case study template (mobile-first)
 }
 
 .case-hero__eyebrow {
-    color: var(--magenta);
+    color: var(--red);
     font-weight: 600;
     font-size: 0.9rem;
     margin-bottom: 12px;
@@ -972,7 +1021,7 @@ Case study template (mobile-first)
 
 .case-hero__tagline {
     font-size: 1.1rem;
-    color: rgba(250, 250, 250, 0.75);
+    color: rgba(243, 237, 230, 0.75);
     max-width: 55ch;
     margin-bottom: 32px;
 }
@@ -982,14 +1031,14 @@ Case study template (mobile-first)
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding-bottom: 40px;
-    border-bottom: 1px solid rgba(250, 250, 250, 0.08);
+    border-bottom: 1px solid rgba(243, 237, 230, 0.08);
     margin-bottom: 40px;
 }
 
 .case-meta__label {
     display: block;
     font-size: 0.78rem;
-    color: rgba(250, 250, 250, 0.5);
+    color: rgba(243, 237, 230, 0.5);
     margin-bottom: 4px;
 }
 
@@ -1001,12 +1050,12 @@ Case study template (mobile-first)
 
 .case-hero__image {
     aspect-ratio: 16 / 9;
-    background: rgba(250, 250, 250, 0.04);
-    border: 1px dashed rgba(250, 250, 250, 0.2);
+    background: rgba(243, 237, 230, 0.04);
+    border: 1px dashed rgba(243, 237, 230, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(250, 250, 250, 0.4);
+    color: rgba(243, 237, 230, 0.4);
     font-size: 0.9rem;
     overflow: hidden;
 }
@@ -1028,7 +1077,7 @@ Case study template (mobile-first)
 .case-body__text {
     font-size: 1.1rem;
     line-height: 1.65;
-    color: rgba(250, 250, 250, 0.85);
+    color: rgba(243, 237, 230, 0.85);
 }
 
 .case-gallery {
@@ -1043,13 +1092,13 @@ Case study template (mobile-first)
 
 .case-gallery__item {
     aspect-ratio: 4 / 3;
-    background: rgba(250, 250, 250, 0.04);
-    border: 1px dashed rgba(250, 250, 250, 0.2);
+    background: rgba(243, 237, 230, 0.04);
+    border: 1px dashed rgba(243, 237, 230, 0.2);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(250, 250, 250, 0.4);
+    color: rgba(243, 237, 230, 0.4);
     font-size: 0.9rem;
     overflow: hidden;
 }
@@ -1061,7 +1110,7 @@ Case study template (mobile-first)
 }
 
 .case-next {
-    background: var(--magenta);
+    background: var(--red);
     padding: 60px 0;
 }
 
@@ -1097,6 +1146,74 @@ Case study template (mobile-first)
     }
 
     .case-next__inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* ============================================
+   Site footer (mobile-first)
+   ============================================ */
+
+.site-footer {
+    padding: 60px 0 40px;
+    border-top: 1px solid rgba(243, 237, 230, 0.08);
+    background: var(--black);
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 0 var(--gutter);
+}
+
+.footer-mark {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--off-white);
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-nav a {
+    color: rgba(243, 237, 230, 0.7);
+    transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--red);
+}
+
+.footer-social {
+    display: flex;
+    gap: 18px;
+    font-size: 1.1rem;
+}
+
+.footer-social a {
+    color: rgba(243, 237, 230, 0.6);
+    transition: color 0.2s ease;
+}
+
+.footer-social a:hover {
+    color: var(--red);
+}
+
+.footer-copy {
+    font-size: 0.8rem;
+    color: rgba(243, 237, 230, 0.4);
+}
+
+@media screen and (min-width: 768px) {
+    .footer-wrapper {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
