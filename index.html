@@ -1,155 +1,146 @@
 ---
 title: Home
 ---
-
 <!DOCTYPE HTML>
 <html lang="en">
-    
-    <head>
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="robots" content="index, follow">
-        <title> Neloverse  | Lincoln, Nebraska | Chinelo's Website </title>
+  <head>
 
-        <meta name="description" content="Neloverse — Chinelo Spencer-Obiano's little corner of the internet.">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Neloverse | Chinelo Spencer-Obiano | Portfolio</title>
 
-        <meta property="og:title" content="Neloverse"/>
+    <meta name="description" content="Neloverse — Chinelo Spencer-Obiano's little corner of the internet.">
 
-        <meta property="og:description" content="Neloverse — Chinelo Spencer-Obiano's little corner of the internet."/>
+    <meta property="og:title" content="Neloverse" />
 
-        <meta name="author" content="Nicole Chinelo Spencer-Obiano">
+    <meta property="og:description" content="Neloverse — Chinelo Spencer-Obiano's little corner of the internet." />
 
-        <meta name="format-detection" content="telephone=yes">
+    <meta name="author" content="Nicole Chinelo Spencer-Obiano">
 
-        <meta name="apple-mobile-web-app-title" content="Neloverse">
+    <meta name="format-detection" content="telephone=yes">
 
-        <link rel="icon" type="image/png" href="/siteart/favicon-96x96.png" sizes="96x96"/>
-        <link rel="icon" type="image/svg+xml" href="/siteart/favicon.svg"/>
-        <link rel="shortcut icon" href="/siteart/favicon.ico"/>
-        <link rel="apple-touch-icon" sizes="180x180" href="/siteart/apple-touch-icon.png"/>
-        
-        <link rel="manifest" href="/siteart/site.webmanifest" />
+    <meta name="apple-mobile-web-app-title" content="Neloverse">
 
+    <link rel="icon" type="image/png" href="/siteart/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/siteart/favicon.svg" />
+    <link rel="shortcut icon" href="/siteart/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/siteart/apple-touch-icon.png" />
+    <link rel="manifest" href="/siteart/site.webmanifest" />
 
+    <link rel="canonical" href="https://neloverse.com" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/menu.css?v=1.0">
 
-        <link rel="canonical" href="https://neloverse.com/index.html" />
-        <link rel="stylesheet" type="text/css" href="../css/style.css?v=1.0">
-        <link rel="stylesheet" type="text/css" href="../css/menu.css?v=1.0">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://use.typekit.net/ens4vrn.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2PHVDHMENJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-        <!-- Icons -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+      gtag('config', 'G-2PHVDHMENJ');
+    </script>
 
-        <!-- Google Analytics -->
-
-        
-
-        <!-- End Google Analytics -->
-
-    </head>
-
-    <body>
-        
-        <div class="gate" id="gate">
-            <div class="gate__card grain">
-                <h1 class="gate__title">Log In</h1>
-                <p class="gate__label" id="gateQuestion">What's your favorite drink?</p>
-                <input type="text" id="gatePassword" class="gate__password" placeholder="Type your answer&hellip;" autocomplete="off">
-                <button class="gate__enter" id="gateEnter">Log In</button>
-                <p class="gate__error is-hidden" id="gateError">Type something to continue.</p>
-            </div>
-        </div>
+  </head>
+  
+  <body>
+  
+    <div class="gate" id="gate">
+      <div class="gate__card grain">
+        <h1 class="gate__title">Log In</h1>
+        <p class="gate__label" id="gateQuestion">What's your favorite drink?</p>
+        <input type="text" id="gatePassword" class="gate__password" placeholder="Type your answer&hellip;" autocomplete="off">
+        <button class="gate__enter" id="gateEnter">Log In</button>
+        <p class="gate__error is-hidden" id="gateError">Type something to continue.</p>
+      </div>
+    </div>
     
     {% include header.html %}
     
-        <main>
-            <section class="hero">
-                <div class="container hero__grid">
-                    <div>
-                        <!-- <p class="hero__eyebrow">Chinelo Spencer-Obiano</p> -->
-                        <h2 class="hero__headline">
-                            Interface by trade, brands by obsession
-                        </h2>
-                        <p class="hero__body">
-                            Interactive designer by day, brand identity by night, weekends, and everywhere in between — logos, color systems, and campaigns with a pulse.
-                        </p>
-                        <div class="hero__actions">
-                            <a href="/work.html" class="btn btn-solid">View work</a>
-                            <a href="/contact.html" class="btn btn-outline">Say hello</a>
-                        </div>
-                    </div>
-
-                    <div class="photo-card">
-                        <div class="photo-card__frame">
-                            <img src="/siteart/potrait.jpeg" alt="Chinelo Spencer-Obiano">
-                        </div>
-
-                        <div class="status-widget" id="statusWidget">
-                            <div class="status-widget__icon-box">
-                                <i aria-hidden="true" class="fa-solid fa-moon status-widget__icon" id="statusIcon"></i>
-                            </div>
-                            <div class="status-widget__text">
-                                <h3 class="sm-heading" id="statusState">Asleep</h3>
-                            </div>
-                            <ul>
-                                <li>Mon&ndash;Fri: 8:00am&ndash;4:00pm CT</li>
-                                <li>Sat&ndash;Sun: Off the clock</li>
-                            </ul>
-                        </div>
-                    </div>
+    <main>
+      <section class="hero">
+        <div class="container hero__inner">
+          <div class="hero__text">
+            <h2 class="hero__headline">
+              Interfaces by trade, brands by obsession
+            </h2>
+            <p class="hero__body">
+              Interactive designer by day, brand identity by night, weekends, and everywhere in between — logos, color systems, and campaigns with a pulse.
+            </p>
+            <div class="hero__actions">
+              <a href="/work.html" class="btn btn-solid">View work</a>
+              <a href="/contact.html" class="btn btn-outline">Say hello</a>
+            </div>
+          </div>
+    
+          <div class="hero__work">
+            <div class="work-preview__header">
+              <h2 class="work-preview__heading">Selected work</h2>
+              <a href="/work.html" class="work-preview__all">See all work</a>
+            </div>
+    
+            <div class="work-scroll">
+              <div class="work-card work-card--placeholder">
+                <div class="construction-banner" aria-hidden="true">
+                  <div class="construction-banner-track">
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                  </div>
                 </div>
-            </section>
-
-            <section class="work-preview">
-                <div class="container">
-                    <div class="work-preview__header">
-                        <h2 class="work-preview__heading">Selected work</h2>
-                        <a href="/work.html" class="work-preview__all">See all work</a>
-                    </div>
-
-                    <div class="work-preview__grid">
-                <!-- TODO: swap thumbnails + titles + links for real projects -->
-                        <a href="/work/project-one.html" class="work-card">
-                            <div class="work-card__image">
-                                <span>Thumbnail</span>
-                            </div>
-                            <h3 class="work-card__title">Project One</h3>
-                            <p class="work-card__tag">Category</p>
-                        </a>
-                        
-                        <a href="/work/project-two.html" class="work-card">
-                            <div class="work-card__image">
-                                <span>Thumbnail</span>
-                            </div>
-                            <h3 class="work-card__title">Project Two</h3>
-                            <p class="work-card__tag">Category</p>
-                        </a>
-
-                        <a href="/work/project-three.html" class="work-card">
-                            <div class="work-card__image">
-                                <span>Thumbnail</span>
-                            </div>
-                            <h3 class="work-card__title">Project Three</h3>
-                            <p class="work-card__tag">Category</p>
-                        </a>
-                    </div>
+              </div>
+    
+              <div class="work-card work-card--placeholder">
+                <div class="construction-banner" aria-hidden="true">
+                  <div class="construction-banner-track">
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                  </div>
                 </div>
-            </section>
-        </main>
-
-        {% include footer.html %}
-
-        <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
-        <script type="text/javascript" src="/js/mobilemenu.js"></script>
-        <script type="text/javascript" src="/js/entrance.js"></script>
-        <script type="text/javascript" src="/js/status.js"></script>
-
-    </body>
+              </div>
+    
+              <div class="work-card work-card--placeholder">
+                <div class="construction-banner" aria-hidden="true">
+                  <div class="construction-banner-track">
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                    <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    {% include footer.html %}
+    
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="/js/mobilemenu.js"></script>
+    <script type="text/javascript" src="/js/entrance.js"></script>
+  
+  </body>
 
 </html>

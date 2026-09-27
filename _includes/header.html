@@ -1,19 +1,27 @@
-<!--PRIMARY MENU-->
+<script src="/js/browser-check.js"></script>
+
+<svg style="position: absolute; width: 0; height: 0;">
+    <filter id="glass-distortion">
+        <feTurbulence type="fractalNoise" baseFrequency="0.008 0.008" numOctaves="2" seed="4" result="noise" />
+        <feGaussianBlur in="noise" stdDeviation="2" result="blurredNoise" />
+        <feDisplacementMap in="SourceGraphic" in2="blurredNoise" scale="40" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+</svg>
 
 <header class="site-header">
-    <div class="header-wrapper">
-        <div class="logo">
-            <a href="/" class="site-header__mark">neloverse</a>
-        </div>
-    </div>
+    <a href="/" class="site-header__mark">
+        <img src="/siteart/primary-logo.png" alt="neloverse" class="site-header__logo site-header__logo--desktop">
+        <img src="/siteart/logo-header-icon-white.png" alt="neloverse" class="site-header__logo site-header__logo--mobile">
+    </a>
+
     <nav class="primary">
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/work.html">Work</a>
                 <ul>
-                    <li><a href="/work/project-one.html">Project One</a></li>
-                    <li><a href="/work/project-two.html">Project Two</a></li>
-                    <li><a href="/work/project-three.html">Project Three</a></li>
+                    <li><span>Coming Soon</span></li>
+                    <li><span>Coming Soon</span></li>
+                    <li><span>Coming Soon</span></li>
                 </ul>
             </li>
             <li><a href="/about.html">About</a></li>
@@ -22,29 +30,42 @@
         <div class="clear"></div>
     </nav>
 
-    <!--MOBILE MENU-->
+    <div class="site-header__icons">
+        <a href="https://linkedin.com/in/chinelospencer-obiano" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+        <a href="mailto:chinelo@neloverse.com" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+        <a href="https://vsco.co/neloobiano" target="_blank" rel="noopener" aria-label="VSCO"><i class="fa-brands fa-vsco" aria-hidden="true"></i></a>
+        <a href="https://wa.me/@chinelolumumma" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+    </div>
+
     <div id="menu-button"><a class="menu-toggle" href="" aria-label="Open menu">&#9776;</a></div>
-    <nav class="mobile">
-        <div class="mobile_top">
-            <a href="#" class="menu-toggle">×</a>
-        </div>
-
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/work.html">Work</a> <i class="click fa fa-chevron-down" aria-hidden="true"></i>
-                <ul class="dpdwn-list">
-                    <li><a href="/work/project-one.html">Project One</a></li>
-                    <li><a href="/work/project-two.html">Project Two</a></li>
-                    <li><a href="/work/project-three.html">Project Three</a></li>
-                </ul>
-            </li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-        </ul>
-
-        <div class="clear"></div>
-        <div class="nav-footer">Neloverse | <span id="copyrightYear"></span></div>
-    </nav>
-
-    <div class="menu-toggle exit-click"></div>
 </header>
+
+<nav class="mobile">
+    <div class="mobile_top">
+        <a href="#" class="menu-toggle">×</a>
+        <div class="social-media">
+            <a href="https://linkedin.com/in/chinelospencer-obiano" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+            <a href="mailto:chinelo@neloverse.com" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+            <a href="https://vsco.co/neloobiano" target="_blank" rel="noopener" aria-label="VSCO"><i class="fa-brands fa-vsco" aria-hidden="true"></i></a>
+            <a href="https://wa.me/@chinelolumumma" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+    </div>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/work.html">Work</a> <i class="click fa fa-chevron-down" aria-hidden="true"></i>
+            <ul class="dpdwn-list">
+                <li><span>Coming Soon</span></li>
+                <li><span>Coming Soon</span></li>
+                <li><span>Coming Soon</span></li>
+            </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+    </ul>
+
+    <div class="clear"></div>
+    <div class="nav-footer">Neloverse | <span id="copyrightYear"></span></div>
+</nav>
+
+<div class="menu-toggle exit-click"></div>

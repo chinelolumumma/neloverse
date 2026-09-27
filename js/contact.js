@@ -1,5 +1,4 @@
 (function () {
-    
     var FORMSPREE_ENDPOINT = "https://formspree.io/f/xkjnzopz";
 
     var form = document.getElementById("chatForm");
@@ -18,6 +17,26 @@
         transcript.appendChild(bubble);
     }
 
+    function appendQuestionBubble(step) {
+        var question = step.querySelector(".chat-bubble--agent");
+        if (!question) return;
+        var clone = question.cloneNode(true);
+        transcript.appendChild(clone);
+    }
+
+    function showTyping() {
+        var typing = document.createElement("div");
+        typing.className = "chat-bubble chat-bubble--agent chat-bubble--typing";
+        typing.id = "typingIndicator";
+        typing.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+        transcript.appendChild(typing);
+    }
+
+    function removeTyping() {
+        var typing = document.getElementById("typingIndicator");
+        if (typing) typing.remove();
+    }
+
     function goToStep(index) {
         steps.forEach(function (step, i) {
             step.classList.toggle("is-hidden", i !== index);
@@ -26,7 +45,9 @@
         if (nextInput) nextInput.focus();
     }
 
-    // "Continue" buttons — validate, log the answer as a sent bubble, advance
+    // "Continue" buttons — move the question and the answer into the
+    // scrolling transcript together, show a brief typing indicator,
+    // then advance to the next question
     form.querySelectorAll("[data-next]").forEach(function (btn) {
         btn.addEventListener("click", function () {
             var step = btn.closest(".chat-step");
@@ -37,14 +58,21 @@
                 return;
             }
 
+            appendQuestionBubble(step);
             appendSentBubble(field.value.trim());
+            step.classList.add("is-hidden");
 
             var currentIndex = steps.indexOf(step);
-            goToStep(currentIndex + 1);
+
+            showTyping();
+            setTimeout(function () {
+                removeTyping();
+                goToStep(currentIndex + 1);
+            }, 1100);
         });
     });
 
-    
+    // Final submit — send to Formspree, show confirmation on success
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -54,8 +82,11 @@
             return;
         }
 
+        var lastStep = steps[steps.length - 1];
+        appendQuestionBubble(lastStep);
         appendSentBubble(messageField.value.trim());
         errorMsg.classList.add("is-hidden");
+        showTyping();
 
         var formData = new FormData(form);
 
@@ -65,6 +96,7 @@
             headers: { Accept: "application/json" }
         })
             .then(function (response) {
+                removeTyping();
                 if (response.ok) {
                     form.classList.add("is-hidden");
                     confirmation.classList.remove("is-hidden");
@@ -73,7 +105,30 @@
                 }
             })
             .catch(function () {
+                removeTyping();
                 errorMsg.classList.remove("is-hidden");
             });
+    });
+})();
+
+
+(function () {
+    var trigger = document.getElementById("contactTrigger");
+    var dropdown = document.getElementById("contactDropdown");
+
+    if (!trigger || !dropdown) return;
+
+    trigger.addEventListener("click", function (e) {
+        // Let actual links inside the dropdown navigate normally
+        if (e.target.closest("a")) return;
+
+        e.stopPropagation();
+        dropdown.classList.toggle("is-open");
+    });
+
+    document.addEventListener("click", function (e) {
+        if (!trigger.contains(e.target)) {
+            dropdown.classList.remove("is-open");
+        }
     });
 })();

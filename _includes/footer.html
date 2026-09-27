@@ -2,8 +2,6 @@
 
 <footer class="site-footer">
     <div class="footer-wrapper">
-        <div class="footer-mark">neloverse</div>
-
         <nav class="footer-nav">
             <a href="/">Home</a>
             <a href="/work.html">Work</a>
@@ -12,22 +10,34 @@
         </nav>
 
         <div class="footer-social">
-            <a href="https://linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <a href="https://linkedin.com/in/chinelospencer-obiano" target="_blank" rel="noopener" aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
             </a>
-            <a href="https://behance.net/YOUR-HANDLE" target="_blank" rel="noopener" aria-label="Behance">
-                <i class="fa-brands fa-behance" aria-hidden="true"></i>
+            <a href="mailto:chinelo@neloverse.com" aria-label="Email">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
             </a>
-            <a href="https://dribbble.com/YOUR-HANDLE" target="_blank" rel="noopener" aria-label="Dribbble">
-                <i class="fa-brands fa-dribbble" aria-hidden="true"></i>
+            <a href="https://vsco.co/neloobiano" target="_blank" rel="noopener" aria-label="VSCO">
+                <i class="fa-brands fa-vsco" aria-hidden="true"></i>
             </a>
-            <a href="https://instagram.com/YOUR-HANDLE" target="_blank" rel="noopener" aria-label="Instagram">
-                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            <a href="https://wa.me/@chinelolumumma" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
             </a>
         </div>
 
         <div class="footer-copy">
-            &copy; <span id="footerYear"></span> Chinelo Spencer-Obiano
+            &copy; <span id="footerYear"></span> neloverse
         </div>
     </div>
 </footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+</button>
+
+<script>
+    document.getElementById("footerYear").textContent = new Date().getFullYear();
+    var copyrightYearEl = document.getElementById("copyrightYear");
+    if (copyrightYearEl) copyrightYearEl.textContent = new Date().getFullYear();
+</script>
+
+<script type="text/javascript" src="/js/back-to-top.js"></script>
