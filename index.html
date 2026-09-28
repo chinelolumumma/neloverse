@@ -9,6 +9,14 @@ title: Home
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
+
+    <script>
+      try {
+        if (sessionStorage.getItem("neloverseGateSeen")) {
+          document.documentElement.classList.add("gate-seen");
+        }
+      } catch (e) {}
+    </script>
     <title>Neloverse | Chinelo Spencer-Obiano | Portfolio</title>
 
     <meta name="description" content="Neloverse — Chinelo Spencer-Obiano's little corner of the internet.">
@@ -29,7 +37,7 @@ title: Home
     <link rel="apple-touch-icon" sizes="180x180" href="/siteart/apple-touch-icon.png" />
     <link rel="manifest" href="/siteart/site.webmanifest" />
 
-    <link rel="canonical" href="https://neloverse.com" />
+    <link rel="canonical" href="https://neloverse.com/" />
     <link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0">
     <link rel="stylesheet" type="text/css" href="/css/menu.css?v=1.0">
 
@@ -54,7 +62,7 @@ title: Home
       <div class="gate__card grain">
         <h1 class="gate__title">Log In</h1>
         <p class="gate__label" id="gateQuestion">What's your favorite drink?</p>
-        <input type="text" id="gatePassword" class="gate__password" placeholder="Type your answer&hellip;" autocomplete="off">
+        <input type="text" id="gatePassword" class="gate__password" placeholder="Type your answer&hellip;" autocomplete="off" aria-labelledby="gateQuestion">
         <button class="gate__enter" id="gateEnter">Log In</button>
         <p class="gate__error is-hidden" id="gateError">Type something to continue.</p>
       </div>
@@ -66,6 +74,7 @@ title: Home
       <section class="hero">
         <div class="container hero__inner">
           <div class="hero__text">
+            <div class="availability"><span class="availability__dot" aria-hidden="true"></span> Lincoln, NE &middot; <time id="localTime"></time></div>
             <h2 class="hero__headline">
               Interfaces by trade, brands by obsession
             </h2>
@@ -73,15 +82,15 @@ title: Home
               Interactive designer by day, brand identity by night, weekends, and everywhere in between — logos, color systems, and campaigns with a pulse.
             </p>
             <div class="hero__actions">
-              <a href="/work.html" class="btn btn-solid">View work</a>
-              <a href="/contact.html" class="btn btn-outline">Say hello</a>
+              <a href="/work" class="btn btn-solid">View work</a>
+              <a href="/contact" class="btn btn-outline">Say hello</a>
             </div>
           </div>
     
           <div class="hero__work">
             <div class="work-preview__header">
               <h2 class="work-preview__heading">Selected work</h2>
-              <a href="/work.html" class="work-preview__all">See all work</a>
+              <a href="/work" class="work-preview__all">See all work</a>
             </div>
     
             <div class="work-scroll">
@@ -140,6 +149,7 @@ title: Home
     <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="/js/mobilemenu.js"></script>
     <script type="text/javascript" src="/js/entrance.js"></script>
+    <script type="text/javascript" src="/js/availability.js"></script>
   
   </body>
 

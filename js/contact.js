@@ -45,9 +45,7 @@
         if (nextInput) nextInput.focus();
     }
 
-    // "Continue" buttons — move the question and the answer into the
-    // scrolling transcript together, show a brief typing indicator,
-    // then advance to the next question
+
     form.querySelectorAll("[data-next]").forEach(function (btn) {
         btn.addEventListener("click", function () {
             var step = btn.closest(".chat-step");
@@ -72,7 +70,7 @@
         });
     });
 
-    // Final submit — send to Formspree, show confirmation on success
+
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -119,7 +117,6 @@
     if (!trigger || !dropdown) return;
 
     trigger.addEventListener("click", function (e) {
-        // Let actual links inside the dropdown navigate normally
         if (e.target.closest("a")) return;
 
         e.stopPropagation();
