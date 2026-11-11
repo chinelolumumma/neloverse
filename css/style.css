@@ -582,6 +582,12 @@ Work preview grid
     font-size: 0.85rem;
 }
 
+.work-card--light .work-card__icon,
+.work-card--light .work-card__arrow {
+    background: var(--fuchsia);
+    color: var(--off-white);
+}
+
 .work-card__bottom {
     position: relative;
     color: var(--off-white);

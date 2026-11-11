@@ -116,22 +116,44 @@ nav.primary ul li a:hover {
 }
 
 /* Appearance of the sub-level links */
+nav.primary ul li li a,
 nav.primary ul li li span {
     display: block;
     font-size: 14px;
     line-height: 24px;
-    padding: 8px 15px;
+    padding: 10px 22px;
     color: var(--off-white);
-    background: var(--black);
+    background: none;
     text-align: left;
-    border-bottom: 1px solid rgba(250, 250, 250, 0.1);
+    white-space: nowrap;
 }
 
 /* This controls the Primary nav dropdowns for sublinks. */
+nav.primary ul li {
+    position: relative;
+}
 nav.primary ul ul {
     display: none;
     position: absolute;
-    border: 1px solid rgba(250, 250, 250, 0.1);
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 40px;
+    min-width: 200px;
+}
+nav.primary ul ul::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 16px;
+    background: rgba(11, 11, 11, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    z-index: -1;
 }
 nav.primary ul ul ul {
     position: absolute;
@@ -145,13 +167,12 @@ nav.primary ul li:hover > ul {
 }
 nav.primary ul ul li {
     float: none;
-    width: 270px;
+    width: auto;
     position: relative;
     margin: 0;
     display: block;
 }
 /******** End of primary Nav ***************/
-
 @media screen and (min-width: 1131px) {
     .menu-toggle.exit-click {
         display: none !important;
