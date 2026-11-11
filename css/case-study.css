@@ -1,0 +1,72 @@
+/* ============================================
+   Case study — hero without a photo
+   ============================================ */
+
+.case-hero--no-image {
+    padding: 150px 0 60px;
+}
+
+.case-hero--no-image .case-hero__title {
+    color: var(--white);
+    text-shadow: 0 2px 16px rgba(11, 11, 11, 0.6);
+}
+
+/* ---------- Text colors: light text over the dark background ---------- */
+
+:root {
+    --white: #FFFFFF;
+}
+
+.case-hero--no-image .case-hero__eyebrow {
+    color: var(--fuchsia-light);
+}
+
+.case-hero__tagline,
+.case-body__text,
+.case-meta__value {
+    color: var(--white);
+    text-shadow: 0 2px 12px rgba(11, 11, 11, 0.6);
+}
+
+.case-meta__label {
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0 2px 12px rgba(11, 11, 11, 0.6);
+}
+
+.case-meta {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.case-body .section-heading,
+.case-related .section-heading {
+    color: var(--white);
+    text-shadow: 0 2px 16px rgba(11, 11, 11, 0.6);
+}
+
+.case-related__arrow {
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ---------- Gallery images: show whole, no crop, no dashed placeholder ---------- */
+
+.case-gallery__grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+}
+
+.case-gallery__item {
+    aspect-ratio: auto;
+    border: none;
+    background: none;
+    border-radius: 12px;
+    display: block;
+    padding: 0;
+}
+
+.case-gallery__item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}

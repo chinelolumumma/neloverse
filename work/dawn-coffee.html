@@ -1,11 +1,8 @@
----
-title: Project One
----
 <!DOCTYPE HTML>
 <html lang="en">
-  
+
   <head>
-    
+
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="robots" content="index, follow">
@@ -30,8 +27,12 @@ title: Project One
       <link rel="manifest" href="/siteart/site.webmanifest" />
 
       <link rel="canonical" href="https://neloverse.com/work/dawn-coffee" />
-      <link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0">
+      <link rel="stylesheet" href="https://use.typekit.net/yaz1hjc.css">
+      <link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1">
       <link rel="stylesheet" type="text/css" href="/css/menu.css?v=1.0">
+      <link rel="stylesheet" type="text/css" href="/css/lightbox.css?v=2.1">
+      <link rel="stylesheet" type="text/css" href="/css/board.css?v=1.1">
+      <link rel="stylesheet" type="text/css" href="/css/case-study.css?v=1.0">
 
       <!-- Icons -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
@@ -50,23 +51,16 @@ title: Project One
 
 
   <body>
-  
-    {% include header.html %}
-    
-    <main>
-    
-      <section class="case-hero">
-        <div class="container">
-          <div class="case-hero__image">
-            <!-- TODO: save your hero image as /siteart/work/dawn-coffee/hero.jpg -->
-            <img src="/siteart/work/dawn-coffee/hero.jpg" alt="Dawn Coffee brand identity, hero image">
 
-            <div class="case-hero__panel grain">
-              <p class="case-hero__eyebrow">Case Study &mdash; Concept Brand</p>
-              <h1 class="case-hero__title">Dawn Coffee</h1>
-              <p class="case-hero__tagline">A branding and seasonal marketing campaign concept for Dawn, a modern coffee shop blending daily ritual with culture and community.</p>
-            </div>
-          </div>
+    {% include header.html %}
+
+    <main>
+
+      <section class="case-hero case-hero--no-image">
+        <div class="container">
+          <p class="case-hero__eyebrow">Case Study &mdash; Concept Brand</p>
+          <h1 class="case-hero__title">Dawn Coffee</h1>
+          <p class="case-hero__tagline">A branding and seasonal marketing campaign concept for Dawn, a modern coffee shop blending daily ritual with culture and community.</p>
 
           <ul class="case-meta">
             <li><span class="case-meta__label">Client</span><span class="case-meta__value">Dawn Coffee (concept)</span></li>
@@ -76,113 +70,144 @@ title: Project One
           </ul>
         </div>
       </section>
-    
+
       <section class="case-body">
         <div class="container case-body__narrow">
           <h2 class="section-heading">Brand identity</h2>
           <p class="case-body__text">
-            "The early bird gets the worm." The brand identity is built around warmth, minimalism, and daily ritual &mdash; the bird mark reflects Dawn's tagline and philosophy.
+            The early bird gets the worm." Everything about Dawn comes from that saying. I wanted the brand to feel warm and homey, so the bird and the lettering both look hand-drawn. Click anything below for a closer look.
           </p>
         </div>
       </section>
-    
-      <section class="case-gallery">
+
+      <section class="board">
         <div class="container">
-          <div class="case-gallery__grid">
-            <!-- TODO: save as /siteart/work/dawn-coffee/brand-identity-1.jpg -->
-            <div class="case-gallery__item">
-              <img src="/siteart/work/dawn-coffee/brand-identity-1.jpg" alt="Dawn Coffee logo and bird mark">
+
+          <div class="board__section">
+            <h3 class="board__heading">Logo Variations</h3>
+            <div class="board-logos">
+
+              <button type="button" class="board-logos__item js-lightbox" data-lightbox-title="Wordmark" data-lightbox-text="Just the name, with COFFEE underneath. I use it when the bird would be too much or too small, like on business cards, receipts, cup sleeves, and the website header.">
+                <img src="/siteart/work/dawn-coffee/logo-wordmark.png" alt="Dawn Coffee wordmark">
+              </button>
+
+              <button type="button" class="board-logos__item js-lightbox" data-lightbox-title="Icon mark" data-lightbox-text="The bird mark on its own. Used wherever a small, simple mark is needed — social media profile pictures, the favicon and the logo on the mobile site, and as a stamp, sticker, or signature on packaging and notes.">
+                <img src="/siteart/work/dawn-coffee/logo-icon.png" alt="Dawn Coffee icon mark">
+              </button>
+
+              <button type="button" class="board-logos__item board-logos__item--tall js-lightbox" data-lightbox-title="Primary logo" data-lightbox-text="The full logo — the dawn wordmark together with the bird. If there's room for it, this is the logo I use, whether that's packaging, signage, the website, or print. The other two only step in when this one won't fit.">
+                <img src="/siteart/work/dawn-coffee/logo-illustrated.png" alt="Dawn Coffee primary logo">
+              </button>
             </div>
           </div>
-        </div>
-      </section>
-    
-      <section class="case-body">
-        <div class="container case-body__narrow">
-          <h2 class="section-heading">Mockups</h2>
-          <p class="case-body__text">
-            Dawn's branding extended into everyday applications &mdash; packaging, signage, and in-store touchpoints that carry the identity into the physical space.
-          </p>
-        </div>
-      </section>
-    
-      <section class="case-gallery">
-        <div class="container">
-          <div class="case-gallery__grid">
-            <!-- TODO: save as /siteart/work/dawn-coffee/mockup-1.jpg through mockup-4.jpg -->
-            <div class="case-gallery__item">
-              <img src="/siteart/work/dawn-coffee/mockup-1.jpg" alt="Dawn Coffee mockup application">
-            </div>
-            <div class="case-gallery__item">
-              <img src="/siteart/work/dawn-coffee/mockup-2.jpg" alt="Dawn Coffee mockup application">
-            </div>
-            <div class="case-gallery__item">
-              <img src="/siteart/work/dawn-coffee/mockup-3.jpg" alt="Dawn Coffee mockup application">
-            </div>
-            <div class="case-gallery__item">
-              <img src="/siteart/work/dawn-coffee/mockup-4.jpg" alt="Dawn Coffee mockup application">
+
+          <div class="board__section">
+            <h3 class="board__heading">Mockups</h3>
+            <div class="board-mockups">
+              <button type="button" class="board-mockups__item js-lightbox" data-lightbox-title="Coffee bag packaging" data-lightbox-text="Dawn's whole bean coffee bag. The wordmark sits at the top, with the bird and worm drawn large in white line art across the copper bag. The side gusset carries the tagline, “The early bird gets the worm,” and the back tells the brand story in script with a short note about fresh starts and beginnings, with room left for the barcode.">
+                <img src="/siteart/work/dawn-coffee/mockup-1.png" alt="Dawn Coffee packaging mockup">
+              </button>
             </div>
           </div>
+
+          <div class="board-split">
+            <div class="board__section">
+              <h3 class="board__heading">Typography</h3>
+              <div class="board-fonts">
+                <button type="button" class="board-fonts__primary js-lightbox" data-lightbox-title="Beth Ellen Regular" data-lightbox-text="The primary font &mdash; a handwritten script used for the logo and standout headlines. It's where the brand's warmth comes from.">Primary font</button>
+                <button type="button" class="board-fonts__tag js-lightbox" data-lightbox-title="Times New Roman" data-lightbox-text="The complementary font, used for longer text and paragraphs. Classic and easy to read, it keeps everything looking clean and organized.">Secondary font</button><br>
+                <p class="board-fonts__note">Beth Ellen Regular is the primary font &mdash; warm and handwritten, used for the logo and headlines.</p>
+                <p class="board-fonts__note">Times New Roman is the complementary font for longer text, especially paragraphs. It's easy to read and keeps everything looking clean and organized.</p>
+              </div>
+            </div>
+
+            <div class="board__section">
+              <h3 class="board__heading">Color Palette</h3>
+              <div class="board-colors">
+                <div class="board-colors__row">
+                  <button type="button" class="board-colors__item js-lightbox" data-lightbox-title="Cornsilk" data-lightbox-hex="#FFF3D8" data-lightbox-rgb="255, 243, 216" data-lightbox-cmyk="0, 5, 15, 0" data-lightbox-text="The lightest neutral, used for backgrounds and breathing room between sections.">
+                    <span class="board-colors__circle" style="background:#FFF3D8"></span>
+                    <span class="board-colors__label">Cornsilk<br>#FFF3D8</span>
+                  </button>
+                  <button type="button" class="board-colors__item js-lightbox" data-lightbox-title="Vanilla" data-lightbox-hex="#FFE8A2" data-lightbox-rgb="255, 232, 162" data-lightbox-cmyk="0, 9, 36, 0" data-lightbox-text="A soft, warm yellow used for highlights and secondary backgrounds.">
+                    <span class="board-colors__circle" style="background:#FFE8A2"></span>
+                    <span class="board-colors__label">Vanilla<br>#FFE8A2</span>
+                  </button>
+                  <button type="button" class="board-colors__item js-lightbox" data-lightbox-title="Copper" data-lightbox-hex="#B8793D" data-lightbox-rgb="184, 121, 61" data-lightbox-cmyk="0, 34, 67, 28" data-lightbox-text="The warm accent, pulled from a dark roast &mdash; used for buttons, the bird mark, and anywhere the brand needs to feel grounded.">
+                    <span class="board-colors__circle" style="background:#B8793d"></span>
+                    <span class="board-colors__label">Copper<br>#B8793D</span>
+                  </button>
+                  <button type="button" class="board-colors__item js-lightbox" data-lightbox-title="Licorice" data-lightbox-hex="#2B1D1A" data-lightbox-rgb="43, 29, 26" data-lightbox-cmyk="0, 33, 40, 83" data-lightbox-text="Near-black, used for type and the darkest backgrounds.">
+                    <span class="board-colors__circle" style="background:#2B1D1A"></span>
+                    <span class="board-colors__label">Licorice<br>#2B1D1A</span>
+                  </button>
+                  <button type="button" class="board-colors__item js-lightbox" data-lightbox-title="Ivory" data-lightbox-hex="#FAF7F0" data-lightbox-rgb="250, 247, 240" data-lightbox-cmyk="0, 1, 4, 2" data-lightbox-text="A soft off-white, used for light backgrounds and as a quiet contrast to Licorice.">
+                    <span class="board-colors__circle board-colors__circle--outline" style="background:#FAF7F0"></span>
+                    <span class="board-colors__label">Ivory<br>#FAF7F0</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
-    
+
       <section class="case-body">
         <div class="container case-body__narrow">
           <h2 class="section-heading">Marketing campaign &mdash; Christmas launch</h2>
           <p class="case-body__text">
-            A 9-post Instagram grid launching Dawn's holiday campaign, "Sip the Season," blending product, lifestyle, and seasonal storytelling. A weekly email introduced a "Drink of the Week" alongside seasonal product and event announcements. Branded tote bags were designed as promotional touchpoints for Dawn's Holiday Acoustic Night, serving as a memorable takeaway.
+            For the Christmas launch I made a 9-post Instagram grid called "Sip the Season," a weekly "Drink of the Week" email, and tote bags for Dawn's Holiday Acoustic Night. The idea was to give people a few different ways to feel the season, whether they're scrolling, reading an email, or leaving the event with a bag.
           </p>
         </div>
       </section>
-    
+
       <section class="case-gallery">
         <div class="container">
           <div class="case-gallery__grid">
-            <!-- TODO: save as /siteart/work/dawn-coffee/campaign-1.jpg through campaign-3.jpg -->
-            <div class="case-gallery__item">
-              <img src="/siteart/work/dawn-coffee/campaign-1.jpg" alt="Sip the Season Instagram grid">
-            </div>
-            <div class="case-gallery__item">
-              <img src="/siteart/work/dawn-coffee/campaign-2.jpg" alt="Drink of the Week email design">
-            </div>
-            <div class="case-gallery__item">
-              <img src="/siteart/work/dawn-coffee/campaign-3.jpg" alt="Dawn Coffee branded tote bag">
-            </div>
+            <button type="button" class="case-gallery__item js-lightbox" data-lightbox-title="Branded tote bag" data-lightbox-text="A tote I designed as the takeaway for Dawn's Holiday Acoustic Night, so people leave with something they'll actually use.">
+              <img src="/siteart/work/dawn-coffee/campaign-3.png" alt="Dawn Coffee branded tote bag">
+            </button>
+            <button type="button" class="case-gallery__item js-lightbox" data-lightbox-title="Sip the Season" data-lightbox-text="A 9-post Instagram grid for Dawn's Christmas launch. I mixed product shots, cozy holiday moments, and simple announcements so the feed felt like the season.">
+              <img src="/siteart/work/dawn-coffee/campaign-1.png" alt="Sip the Season Instagram grid">
+            </button>
+            <button type="button" class="case-gallery__item js-lightbox" data-lightbox-title="Drink of the Week" data-lightbox-text="A 9-post Instagram grid for Dawn's Christmas launch. I mixed product shots, cozy holiday moments, and simple announcements so the feed felt like the season.">
+              <img src="/siteart/work/dawn-coffee/campaign-2.png" alt="Drink of the Week email design">
+            </button>
           </div>
         </div>
       </section>
-    
+
       <section class="case-body">
         <div class="container case-body__narrow">
           <h2 class="section-heading">Design process</h2>
           <p class="case-body__text">
-            The process focused on exploring type, word meaning, and color to capture Dawn's identity. The word "dawn" symbolizes new beginnings &mdash; a personal connection to growing up hearing "the early bird gets the worm."
+            The name came from when people drink coffee. Most of us have it in the morning, right when we wake up. I tied that to a saying I grew up with. The phrase is "the early bird gets the worm," but in Nigeria we change it a little and say the early bird gets the fattest worm. That became the whole idea behind the brand: if you start early and do what you need to do, you get the best of what's out there.
           </p>
         </div>
       </section>
-    
+
       <section class="case-gallery">
         <div class="container">
           <div class="case-gallery__grid">
-            <!-- TODO: save as /siteart/work/dawn-coffee/process-1.jpg and process-2.jpg -->
-            <div class="case-gallery__item">
+            <button type="button" class="case-gallery__item js-lightbox" data-lightbox-title="Where it started" data-lightbox-text="The first notes I wrote when I began the brand. I knew I wanted a handwritten-style font and a bird with a worm, and I was already working out colors, yellow and a very dark brown, and what didn't fit.">
               <img src="/siteart/work/dawn-coffee/process-1.jpg" alt="Dawn Coffee design process exploration">
-            </div>
-            <div class="case-gallery__item">
-              <img src="/siteart/work/dawn-coffee/process-2.jpg" alt="Dawn Coffee design process exploration">
-            </div>
+            </button>
+            <button type="button" class="case-gallery__item js-lightbox" data-lightbox-title="Putting it together" data-lightbox-text="Then the ideas moved into Illustrator, where I laid out color palettes, type, and the bird and worm pieces side by side to see how they worked together.">
+              <img src="/siteart/work/dawn-coffee/process-2.png" alt="Dawn Coffee design process exploration">
+            </button>
           </div>
         </div>
       </section>
-    
+
       <section class="case-body">
         <div class="container case-body__narrow">
           <p class="case-body__text">
-            Dawn Coffee positions itself as more than a cafe &mdash; a cultural hub for community, music, and daily ritual. This campaign demonstrates how branding, social media, and marketing design create a cohesive seasonal experience.
+            I wanted Dawn to feel homey and warm, not rigid and over-structured, so I went with handwritten script for the type. I wanted the bird to feel just as hand-drawn, so I built the bird and the worm by combining pieces from different sources until they became one drawing that matched the lettering.
           </p>
         </div>
       </section>
-    
+
       <section class="case-related">
         <div class="container">
           <div class="case-related__header">
@@ -230,15 +255,44 @@ title: Project One
           </div>
         </div>
       </section>
-    
+
     </main>
-    
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox__backdrop" data-lightbox-close></div>
+      <div class="lightbox__content" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+        <button type="button" class="lightbox__close" data-lightbox-close aria-label="Close">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div class="lightbox__media" id="lightboxMedia">
+          <img class="lightbox__image" id="lightboxImage" src="" alt="">
+          <div class="lightbox__swatch" id="lightboxSwatch"></div>
+        </div>
+        <div class="lightbox__panel" id="lightboxPanel">
+          <h3 class="lightbox__title" id="lightboxTitle"></h3>
+          <p class="lightbox__text" id="lightboxText"></p>
+          <dl class="lightbox__specs" id="lightboxSpecs">
+            <div class="lightbox__spec">
+              <dt>Hex</dt><dd id="lightboxHex"></dd>
+            </div>
+            <div class="lightbox__spec">
+              <dt>RGB</dt><dd id="lightboxRgb"></dd>
+            </div>
+            <div class="lightbox__spec">
+              <dt>CMYK</dt><dd id="lightboxCmyk"></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
     {% include footer.html %}
-    
+
     <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="/js/mobilemenu.js"></script>
     <script type="text/javascript" src="/js/case-related.js"></script>
-  
+    <script type="text/javascript" src="/js/lightbox.js"></script>
+
   </body>
 
 </html>
