@@ -674,7 +674,7 @@ Work preview grid
 }
 
 /* ============================================
-Page heading (reused across work.html, about.html, contact.html)
+Page heading
 ============================================ */
 
 .page-heading {
@@ -699,7 +699,6 @@ Page heading (reused across work.html, about.html, contact.html)
 
 /* ============================================
 Work index grid
-Shares .work-card styling with the homepage preview; only the grid container differs.
 ============================================ */
 
 .work-index {
@@ -707,7 +706,7 @@ Shares .work-card styling with the homepage preview; only the grid container dif
 }
 
 /* ============================================
-Shared section heading (reused across pages)
+Shared section heading 
 ============================================ */
 
 .section-heading {

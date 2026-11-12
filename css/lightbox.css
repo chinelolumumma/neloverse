@@ -1,9 +1,6 @@
 /* ============================================
-   Lightbox — click-to-expand board items
-   Handles three kinds of content: an image with a
-   description, a color swatch with its specs, or
-   plain text (font samples).
-   ============================================ */
+Lightbox
+============================================ */
 
 .lightbox {
     position: fixed;
