@@ -1,0 +1,42 @@
+<section class="case-related">
+  <div class="container">
+    <div class="case-related__header">
+      <h2 class="section-heading">More work</h2>
+      <div class="case-related__controls">
+        <button type="button" class="case-related__arrow" id="relatedPrev" aria-label="Previous project">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="case-related__arrow" id="relatedNext" aria-label="Next project">
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="case-related__scroll" id="relatedScroll">
+      {% for project in site.data.projects %}
+        {% unless project.url == page.url %}
+      <a href="{{ project.url }}" class="work-card{% if project.light %} work-card--light{% endif %}" style="background-color:{{ project.bg }}; background-image:url('{{ project.image }}'); background-size:70%; background-repeat:no-repeat; background-position:center 40%;">
+        <div class="work-card__top">
+          <span class="work-card__icon"><i class="fa-solid {{ project.icon }}" aria-hidden="true"></i></span>
+          <span class="work-card__arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="work-card__bottom">
+          <h3 class="work-card__title">{{ project.title }}</h3>
+          <p class="work-card__subtitle">{{ project.subtitle }}</p>
+        </div>
+      </a>
+        {% endunless %}
+      {% endfor %}
+
+      <div class="work-card work-card--placeholder">
+        <div class="construction-banner" aria-hidden="true">
+          <div class="construction-banner-track">
+            {% for i in (1..8) %}
+            <span> Under Construction <b>&middot;</b> Coming Soon <b>&middot;</b></span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

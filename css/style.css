@@ -606,6 +606,15 @@ Work preview grid
     margin: 0;
 }
 
+.work-card--light .work-card__title {
+    color: var(--black);
+}
+
+.work-card--light .work-card__subtitle {
+    color: var(--black);
+    opacity: 0.8;
+}
+
 .work-card--placeholder {
     display: flex;
     align-items: center;

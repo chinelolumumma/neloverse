@@ -79,7 +79,7 @@
     position: relative;
     flex: 0 0 50%;
     min-height: 0;
-    background: #FFF3D6;
+    background: var(--lightbox-bg, #FFF3D6);
     display: flex;
     align-items: center;
     justify-content: center;

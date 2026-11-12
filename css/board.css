@@ -44,15 +44,15 @@
     cursor: pointer;
     border-radius: 12px;
     overflow: hidden;
-    background: #FFF3D6;
+    background: var(--board-logo-bg, #FFF3D6);
 }
 
 .board-logos__item img {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    width: calc(100% - 40px);
-    height: calc(100% - 40px);
+    top: var(--board-logo-inset, 20px);
+    left: var(--board-logo-inset, 20px);
+    width: calc(100% - var(--board-logo-inset, 20px) * 2);
+    height: calc(100% - var(--board-logo-inset, 20px) * 2);
     object-fit: contain;
     display: block;
 }
@@ -87,6 +87,10 @@
     display: block;
 }
 
+.board-mockups__item--wide {
+    grid-column: 1 / -1;
+}
+
 /* ---------- Fonts + color palette, side by side on desktop ---------- */
 
 .board-split {
@@ -114,6 +118,10 @@
     cursor: pointer;
 }
 
+.board-fonts__primary--roca {
+    font-family: "Roca", Georgia, serif;
+}
+
 .board-fonts__tag {
     font-family: "Times New Roman", Times, serif;
     font-weight: 400;
@@ -124,6 +132,10 @@
     border: none;
     padding: 0;
     cursor: pointer;
+}
+
+.board-fonts__tag--questrial {
+    font-family: "Questrial", Arial, sans-serif;
 }
 
 .board-fonts__note {
@@ -158,9 +170,10 @@
 
 .board-colors__circle {
     display: block;
-    width: 100%;
-    max-width: 90px;
-    aspect-ratio: 1 / 1;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    box-sizing: border-box;
     border-radius: 50%;
 }
 

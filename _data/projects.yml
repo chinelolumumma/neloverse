@@ -1,0 +1,15 @@
+- title: Dawn Coffee
+  subtitle: Brand identity & holiday campaign
+  url: /work/dawn-coffee.html
+  icon: fa-mug-hot
+  image: /siteart/work/dawn-coffee/logo-thumbnail-white.png
+  bg: "rgba(155, 0, 71, 0.6)"
+  light: false
+
+- title: KA Bridge Digital
+  subtitle: Brand identity
+  url: /work/ka-bridge-digital.html
+  icon: fa-laptop-code
+  image: /siteart/work/ka-bridge-digital/logo-thumbnail-white.png
+  bg: "rgba(155, 0, 71, 0.6)"
+  light: false
